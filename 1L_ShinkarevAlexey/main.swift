@@ -1,5 +1,3 @@
-//import Foundation
-
 //
 //  main.swift
 //  GB_homeworks
@@ -35,9 +33,7 @@ if cat1.isLessThanOrEqualTo(0) || cat2.isLessThanOrEqualTo(0) {
    print("длины катетов могут быть только положительными")
 } else {
     let  hypo:Double = (pow(cat1,2)+pow(cat2,2.0)).squareRoot()
-    print("площадь треугольника", (cat1*cat2)/2.0)
-    print("периметр треугольника", cat1+cat2+hypo)
-    print("гипотенуза", hypo)
+    print("площадь треугольника", (cat1*cat2)/2.0); print("периметр треугольника", cat1+cat2+hypo); print("гипотенуза", hypo)
 }
 
 // пользователь вводит сумму вклада и годовой процент
