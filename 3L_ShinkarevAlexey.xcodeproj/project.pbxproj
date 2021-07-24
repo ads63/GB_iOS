@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1646B44226A866110027C2C4 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646B44126A866110027C2C4 /* Car.swift */; };
 		1646B44426A86D420027C2C4 /* SportCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646B44326A86D420027C2C4 /* SportCar.swift */; };
 		1646B44626A86D5C0027C2C4 /* TrunkCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646B44526A86D5C0027C2C4 /* TrunkCar.swift */; };
-		1646B44826A871220027C2C4 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646B44726A871220027C2C4 /* Actions.swift */; };
+		1646B44826A871220027C2C4 /* CarEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646B44726A871220027C2C4 /* CarEnums.swift */; };
 		1687855C269DB8440050D244 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1687855B269DB8440050D244 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,10 +26,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1646B44126A866110027C2C4 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		1646B44326A86D420027C2C4 /* SportCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportCar.swift; sourceTree = "<group>"; };
 		1646B44526A86D5C0027C2C4 /* TrunkCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrunkCar.swift; sourceTree = "<group>"; };
-		1646B44726A871220027C2C4 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
+		1646B44726A871220027C2C4 /* CarEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarEnums.swift; sourceTree = "<group>"; };
 		16878558269DB8440050D244 /* 3L_ShinkarevAlexey */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 3L_ShinkarevAlexey; sourceTree = BUILT_PRODUCTS_DIR; };
 		1687855B269DB8440050D244 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,10 +64,9 @@
 			isa = PBXGroup;
 			children = (
 				1687855B269DB8440050D244 /* main.swift */,
-				1646B44126A866110027C2C4 /* Car.swift */,
 				1646B44326A86D420027C2C4 /* SportCar.swift */,
 				1646B44526A86D5C0027C2C4 /* TrunkCar.swift */,
-				1646B44726A871220027C2C4 /* Actions.swift */,
+				1646B44726A871220027C2C4 /* CarEnums.swift */,
 			);
 			path = 3L_ShinkarevAlexey;
 			sourceTree = "<group>";
@@ -131,9 +128,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1646B44826A871220027C2C4 /* Actions.swift in Sources */,
+				1646B44826A871220027C2C4 /* CarEnums.swift in Sources */,
 				1646B44426A86D420027C2C4 /* SportCar.swift in Sources */,
-				1646B44226A866110027C2C4 /* Car.swift in Sources */,
 				1687855C269DB8440050D244 /* main.swift in Sources */,
 				1646B44626A86D5C0027C2C4 /* TrunkCar.swift in Sources */,
 			);
