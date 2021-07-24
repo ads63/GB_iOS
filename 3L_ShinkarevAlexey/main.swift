@@ -45,7 +45,7 @@ var man = TrunkCar(modelName: "MAN TGM", year: 2013, tankVolume: 40, bodyVolume:
 man.print()
 man.changeCarState(action: CarActions.openWindow(0))
 man.changeCarState(action: CarActions.openWindow(5))
-var man2 = TrunkCar(car: man)
+var man2 = man
 man2.print()
 man2.changeCarState(action: CarActions.load(2))
 man2.print()
