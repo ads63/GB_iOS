@@ -4,7 +4,7 @@
 //
 //  Created by Алексей Шинкарев on 25.07.2021.
 //
-//import Foundation
+// import Foundation
 
 enum CarActions {
     case startEngine
@@ -30,6 +30,7 @@ enum TrailerState: String {
     case hooked = "прицеплен"
     case unhooked = "отцеплен"
 }
+
 enum EngineState: String {
     case off = "остановлен"
     case on = "запущен"

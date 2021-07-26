@@ -17,21 +17,20 @@ class SportCar: Car {
                   tankVolume: car.tankVolume!, trunkVolume: car.trunkVolume!, fuelConsumption: car.fuelConsumption!,
                   milage: car.milage)
         windowState = car.windowState
-        filledVolume=car.filledVolume
-        fuelVolume=car.filledVolume
-        engineState=car.engineState
-        roofState=car.roofState
+        filledVolume = car.filledVolume
+        fuelVolume = car.filledVolume
+        engineState = car.engineState
+        roofState = car.roofState
     }
-    
-    init!(modelName: String, year: Int, windowsCount: Int, tankVolume: Double,
-          trunkVolume: Double, fuelConsumption: Double, milage: Double) {
 
+    init!(modelName: String, year: Int, windowsCount: Int, tankVolume: Double,
+          trunkVolume: Double, fuelConsumption: Double, milage: Double)
+    {
         if trunkVolume <= 0 { return nil }
         self.trunkVolume = trunkVolume
-        
+
         super.init(modelName: modelName, year: year, windowsCount: windowsCount, tankVolume: tankVolume,
                    fuelConsumption: fuelConsumption, milage: milage)
-        
     }
 
     override public func changeCarState(action: CarActions) {
@@ -54,9 +53,9 @@ class SportCar: Car {
         case .drive(let distance):
             result = drive(distance)
         case .upRoof:
-            result=upRoof()
+            result = upRoof()
         case .downRoof:
-            result=downRoof()
+            result = downRoof()
         default:
             break
         }
@@ -66,7 +65,7 @@ class SportCar: Car {
     public func print() {
         Swift.print(toString() + "\n")
     }
-    
+
     public func toString() -> String {
         var result = [
             "Модель: \(model!)",
@@ -82,27 +81,27 @@ class SportCar: Car {
         ]
 
         for (index, element) in windowState!.enumerated() {
-            result.insert("Окно \(index+1): \(element.rawValue)", at: index+2)
-            
+            result.insert("Окно \(index + 1): \(element.rawValue)", at: index + 2)
         }
         return result.joined(separator: "\n")
     }
+
     private func load(_ volume: Double) -> Bool {
         var result = false
-        if volume>0 && volume <= (trunkVolume!-filledVolume) {
+        if volume > 0, volume <= (trunkVolume! - filledVolume) {
             filledVolume += volume
             result = true
         }
         return result
     }
-    
+
     private func upRoof() -> Bool {
-        roofState=RoofState.up
+        roofState = RoofState.up
         return roofState==RoofState.up
     }
-    
+
     private func downRoof() -> Bool {
-        roofState=RoofState.down
+        roofState = RoofState.down
         return roofState==RoofState.down
     }
 
@@ -114,6 +113,4 @@ class SportCar: Car {
         }
         return result
     }
-
-
 }

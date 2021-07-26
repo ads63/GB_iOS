@@ -5,7 +5,6 @@
 //  Created by Алексей Шинкарев on 25.07.2021.
 //
 
-
 import Foundation
 
 class Car {
@@ -37,7 +36,6 @@ class Car {
         self.tankVolume = tankVolume
         self.fuelConsumption = fuelConsumption
         self.milage = milage
-
     }
 
     public func changeCarState(action: CarActions) {}
@@ -72,7 +70,7 @@ class Car {
 
     func fillFuel(_ volume: Double) -> Bool {
         var result = false
-        if volume>0 && volume <= (tankVolume!-fuelVolume) {
+        if volume>0, volume <= (tankVolume!-fuelVolume) {
             fuelVolume += volume
             result = true
         }
@@ -81,11 +79,10 @@ class Car {
 
     func drive(_ distance: Double) -> Bool {
         var result = false
-        if engineState==EngineState.on && fuelVolume>0 && distance>0 {
+        if engineState==EngineState.on, fuelVolume>0, distance>0 {
             milage += min(distance, fuelVolume / fuelConsumption!)
             result = true
         }
         return result
     }
-
 }

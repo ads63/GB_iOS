@@ -5,10 +5,9 @@
 //  Created by Алексей Шинкарев on 25.07.2021.
 //
 
-
 import Foundation
 
-class TrunkCar : Car {
+class TrunkCar: Car {
     private let bodyVolume: Double?
     private var filledVolume = 0.0
     private var trailerState = TrailerState.unhooked
@@ -18,46 +17,46 @@ class TrunkCar : Car {
                   tankVolume: car.tankVolume!, bodyVolume: car.bodyVolume!, fuelConsumption: car.fuelConsumption!,
                   milage: car.milage)
         windowState = car.windowState
-        filledVolume=car.filledVolume
-        fuelVolume=car.filledVolume
-        engineState=car.engineState
-        trailerState=car.trailerState
+        filledVolume = car.filledVolume
+        fuelVolume = car.filledVolume
+        engineState = car.engineState
+        trailerState = car.trailerState
     }
-    
+
     init!(modelName: String, year: Int, windowsCount: Int = 2, tankVolume: Double,
-          bodyVolume: Double, fuelConsumption: Double, milage: Double) {
+          bodyVolume: Double, fuelConsumption: Double, milage: Double)
+    {
         if bodyVolume <= 0 { return nil }
         self.bodyVolume = bodyVolume
         super.init(modelName: modelName, year: year, windowsCount: windowsCount, tankVolume: tankVolume,
                    fuelConsumption: fuelConsumption, milage: milage)
     }
 
-    public override func changeCarState(action: CarActions) {
+    override public func changeCarState(action: CarActions) {
         var result = true
         switch action {
         case .startEngine:
-            result=startEngine()
+            result = startEngine()
         case .stopEngine:
-            result=stopEngine()
+            result = stopEngine()
         case .openWindow(let winIndex):
-            result=openWindow(winIndex)
+            result = openWindow(winIndex)
         case .closeWindow(let winIndex):
-            result=closeWindow(winIndex)
+            result = closeWindow(winIndex)
         case .load(let volume):
-            result=load(volume)
+            result = load(volume)
         case .unload(let volume):
-            result=unload(volume)
+            result = unload(volume)
         case .fillFuel(let volume):
-            result=fillFuel(volume)
+            result = fillFuel(volume)
         case .drive(let distance):
-            result=drive(distance)
+            result = drive(distance)
         case .unhookTrailer:
-            result=unhookTrailer()
+            result = unhookTrailer()
         case .hookTrailer:
-            result=hookTrailer()
+            result = hookTrailer()
         default:
             break
-        
         }
         if !result { Swift.print("\(model!): Действие \(action) не выполнено\n") }
     }
@@ -65,7 +64,7 @@ class TrunkCar : Car {
     public func print() {
         Swift.print(toString()+"\n")
     }
-    
+
     public func toString() -> String {
         var result = [
             "Модель: \(model!)",
@@ -86,27 +85,27 @@ class TrunkCar : Car {
 
         return result.joined(separator: "\n")
     }
-    
-    private  func hookTrailer() -> Bool {
+
+    private func hookTrailer() -> Bool {
         trailerState = TrailerState.hooked
         return trailerState == TrailerState.hooked
     }
-    
-    private  func unhookTrailer() -> Bool {
+
+    private func unhookTrailer() -> Bool {
         trailerState = TrailerState.unhooked
         return trailerState == TrailerState.unhooked
     }
-    
-    private  func load(_ volume: Double) -> Bool {
+
+    private func load(_ volume: Double) -> Bool {
         var result = false
-        if volume>0 && volume <= (bodyVolume!-filledVolume) {
+        if volume > 0, volume <= (bodyVolume! - filledVolume) {
             filledVolume += volume
             result = true
         }
         return result
     }
 
-    private  func unload(_ volume: Double) -> Bool {
+    private func unload(_ volume: Double) -> Bool {
         var result = false
         if volume <= filledVolume {
             filledVolume -= volume
@@ -114,5 +113,4 @@ class TrunkCar : Car {
         }
         return result
     }
-
 }
