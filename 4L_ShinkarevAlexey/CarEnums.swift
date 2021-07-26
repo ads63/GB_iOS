@@ -1,10 +1,9 @@
 //
 //  Actions.swift
-//  3L_ShinkarevAlexey
+//  GB_homeworks
 //
 //  Created by Алексей Шинкарев on 25.07.2021.
 //
-// import Foundation
 
 enum CarActions {
     case startEngine

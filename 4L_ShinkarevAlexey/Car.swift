@@ -1,6 +1,6 @@
 //
-//  SportCar.swift
-//  3L_ShinkarevAlexey
+//  Car.swift
+//  GB_homeworks
 //
 //  Created by Алексей Шинкарев on 25.07.2021.
 //
