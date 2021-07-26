@@ -12,24 +12,27 @@ class SportCar: Car {
     private var filledVolume = 0.0
     private var roofState = RoofState.up
 
+
+    init!(modelName: String, year: Int, tankVolume: Double, trunkVolume: Double,
+          fuelConsumption: Double, milage: Double, windowsCount: Int) {
+        if trunkVolume <= 0 { return nil }
+        self.trunkVolume = trunkVolume
+
+        super.init(modelName: modelName, year: year, tankVolume: tankVolume,
+                   fuelConsumption: fuelConsumption, milage: milage,
+                   windowsCount: windowsCount)
+    }
+    
     convenience init(_ car: SportCar) {
-        self.init(modelName: car.model!, year: car.manufactured!, windowsCount: car.windowState!.count,
-                  tankVolume: car.tankVolume!, trunkVolume: car.trunkVolume!, fuelConsumption: car.fuelConsumption!,
-                  milage: car.milage)
+        self.init(modelName: car.model!, year: car.manufactured!,
+                  tankVolume: car.tankVolume!, trunkVolume: car.trunkVolume!,
+                  fuelConsumption: car.fuelConsumption!, milage: car.milage,
+                  windowsCount: car.windowState!.count)
         windowState = car.windowState
         filledVolume = car.filledVolume
         fuelVolume = car.filledVolume
         engineState = car.engineState
         roofState = car.roofState
-    }
-
-    init!(modelName: String, year: Int, windowsCount: Int, tankVolume: Double,
-          trunkVolume: Double, fuelConsumption: Double, milage: Double) {
-        if trunkVolume <= 0 { return nil }
-        self.trunkVolume = trunkVolume
-
-        super.init(modelName: modelName, year: year, windowsCount: windowsCount, tankVolume: tankVolume,
-                   fuelConsumption: fuelConsumption, milage: milage)
     }
 
     override public func changeCarState(action: CarActions) {

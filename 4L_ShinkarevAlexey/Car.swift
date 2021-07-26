@@ -20,14 +20,16 @@ class Car {
         didSet { fuelVolume -= (fuelConsumption! * (milage-oldValue)) }
     }
 
-    init!(modelName: String, year: Int, windowsCount: Int, tankVolume: Double, fuelConsumption: Double, milage: Double) {
-        if modelName.isEmpty || // пустое название модели
-            year>Calendar.current.component(.year, from: Date()) || // год выпуска в будущем
-            year < 1900 || // год выпуска до 1900
-            ![2, 4].contains(windowsCount) || // количество окон не 2 и не 4
-            tankVolume <= 0 || // объем бака отрицательный
-            fuelConsumption <= 0 || // расход топлива
-            milage < 0 // пробег
+    init!(modelName: String, year: Int, tankVolume: Double,
+          fuelConsumption: Double, milage: Double, windowsCount: Int)
+    {
+        if modelName.isEmpty ||
+            year>Calendar.current.component(.year, from: Date()) ||
+            year < 1900 ||
+            ![2, 4].contains(windowsCount) ||
+            tankVolume <= 0 ||
+            fuelConsumption <= 0 ||
+            milage < 0
         { return nil }
 
         self.manufactured = year

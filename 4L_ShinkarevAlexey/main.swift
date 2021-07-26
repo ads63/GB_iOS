@@ -14,8 +14,8 @@ import Foundation
 // 5. Создать несколько объектов каждого класса. Применить к ним различные действия.
 // 6. Вывести значения свойств экземпляров в консоль.
 
-let mers = SportCar(modelName: "Mersedes-Benz W128", year: 1959, windowsCount: 2, tankVolume: 40,
-                    trunkVolume: 10, fuelConsumption: 0.07, milage: 0)
+let mers = SportCar(modelName: "Mersedes-Benz W128", year: 1959, tankVolume: 40,
+                    trunkVolume: 10, fuelConsumption: 0.07, milage: 0, windowsCount: 2)
 mers?.print()
 mers?.changeCarState(action: CarActions.openWindow(0))
 mers?.changeCarState(action: CarActions.openWindow(1))
@@ -34,8 +34,9 @@ mersNew.print()
 mersNew.changeCarState(action: CarActions.closeWindow(0))
 mersNew.print()
 
-let porsche = SportCar(modelName: "Porsche 911", year: 2021, windowsCount: 4, tankVolume: 40,
-                       trunkVolume: 60, fuelConsumption: 0.08, milage: 40000)!
+let porsche = SportCar(modelName: "Porsche 911", year: 2021, tankVolume: 40,
+                       trunkVolume: 60, fuelConsumption: 0.08, milage: 40000,
+                       windowsCount: 4)!
 porsche.print()
 porsche.changeCarState(action: CarActions.fillFuel(30))
 porsche.changeCarState(action: CarActions.startEngine)

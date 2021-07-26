@@ -14,23 +14,26 @@ class TrunkCar: Car {
     /// состояние прицепа
     private var trailerState = TrailerState.unhooked
 
+    init!(modelName: String, year: Int, windowsCount: Int = 2, tankVolume: Double,
+          bodyVolume: Double, fuelConsumption: Double, milage: Double)
+    {
+        if bodyVolume <= 0 { return nil }
+        self.bodyVolume = bodyVolume
+        super.init(modelName: modelName, year: year,
+                   tankVolume: tankVolume, fuelConsumption: fuelConsumption,
+                   milage: milage, windowsCount: windowsCount)
+    }
+
     convenience init(_ car: TrunkCar) {
-        self.init(modelName: car.model!, year: car.manufactured!, windowsCount: car.windowState!.count,
-                  tankVolume: car.tankVolume!, bodyVolume: car.bodyVolume!, fuelConsumption: car.fuelConsumption!,
-                  milage: car.milage)
+        self.init(modelName: car.model!, year: car.manufactured!,
+                  windowsCount: car.windowState!.count,
+                  tankVolume: car.tankVolume!, bodyVolume: car.bodyVolume!,
+                  fuelConsumption: car.fuelConsumption!, milage: car.milage)
         windowState = car.windowState
         filledVolume = car.filledVolume
         fuelVolume = car.filledVolume
         engineState = car.engineState
         trailerState = car.trailerState
-    }
-
-    init!(modelName: String, year: Int, windowsCount: Int = 2, tankVolume: Double,
-          bodyVolume: Double, fuelConsumption: Double, milage: Double) {
-        if bodyVolume <= 0 { return nil }
-        self.bodyVolume = bodyVolume
-        super.init(modelName: modelName, year: year, windowsCount: windowsCount, tankVolume: tankVolume,
-                   fuelConsumption: fuelConsumption, milage: milage)
     }
 
     override public func changeCarState(action: CarActions) {
@@ -59,12 +62,17 @@ class TrunkCar: Car {
         default:
             break
         }
-        if !result { Swift.print("\(model!): Действие \(action) не выполнено\n") }
+        if !result {
+            Swift.print("\(model!): Действие \(action) не выполнено\n")
+            
+        }
     }
-/// печать метода
+
+    /// печать метода
     public func print() {
         Swift.print(toString()+"\n")
     }
+
     /// трансформация в строку
     public func toString() -> String {
         var result = [
