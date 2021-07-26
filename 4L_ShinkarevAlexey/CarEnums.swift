@@ -2,9 +2,9 @@
 //  Actions.swift
 //  3L_ShinkarevAlexey
 //
-//  Created by Алексей Шинкарев on 24.07.2021.
+//  Created by Алексей Шинкарев on 25.07.2021.
 //
-import Foundation
+//import Foundation
 
 enum CarActions {
     case startEngine
@@ -15,8 +15,21 @@ enum CarActions {
     case unload(Double)
     case fillFuel(Double)
     case drive(Double)
+    case upRoof
+    case downRoof
+    case hookTrailer
+    case unhookTrailer
 }
 
+enum RoofState: String {
+    case up = "поднята"
+    case down = "опущена"
+}
+
+enum TrailerState: String {
+    case hooked = "прицеплен"
+    case unhooked = "отцеплен"
+}
 enum EngineState: String {
     case off = "остановлен"
     case on = "запущен"
