@@ -6,10 +6,12 @@
 //
 
 import Foundation
-
+/// TrunkCar class
 class TrunkCar: Car {
     private let bodyVolume: Double?
+    /// объем кузова
     private var filledVolume = 0.0
+    /// состояние прицепа
     private var trailerState = TrailerState.unhooked
 
     convenience init(_ car: TrunkCar) {
@@ -24,8 +26,7 @@ class TrunkCar: Car {
     }
 
     init!(modelName: String, year: Int, windowsCount: Int = 2, tankVolume: Double,
-          bodyVolume: Double, fuelConsumption: Double, milage: Double)
-    {
+          bodyVolume: Double, fuelConsumption: Double, milage: Double) {
         if bodyVolume <= 0 { return nil }
         self.bodyVolume = bodyVolume
         super.init(modelName: modelName, year: year, windowsCount: windowsCount, tankVolume: tankVolume,
@@ -60,11 +61,11 @@ class TrunkCar: Car {
         }
         if !result { Swift.print("\(model!): Действие \(action) не выполнено\n") }
     }
-
+/// печать метода
     public func print() {
         Swift.print(toString()+"\n")
     }
-
+    /// трансформация в строку
     public func toString() -> String {
         var result = [
             "Модель: \(model!)",

@@ -24,8 +24,7 @@ class SportCar: Car {
     }
 
     init!(modelName: String, year: Int, windowsCount: Int, tankVolume: Double,
-          trunkVolume: Double, fuelConsumption: Double, milage: Double)
-    {
+          trunkVolume: Double, fuelConsumption: Double, milage: Double) {
         if trunkVolume <= 0 { return nil }
         self.trunkVolume = trunkVolume
 
