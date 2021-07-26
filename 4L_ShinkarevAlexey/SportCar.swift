@@ -13,7 +13,9 @@ class SportCar: Car {
     private var roofState = RoofState.up
 
     convenience init(_ car: SportCar) {
-        self.init(modelName: car.model!, year: car.manufactured!, windowsCount: car.windowState!.count, tankVolume: car.tankVolume!, trunkVolume: car.trunkVolume!, fuelConsumption: car.fuelConsumption!, milage: car.milage)
+        self.init(modelName: car.model!, year: car.manufactured!, windowsCount: car.windowState!.count,
+                  tankVolume: car.tankVolume!, trunkVolume: car.trunkVolume!, fuelConsumption: car.fuelConsumption!,
+                  milage: car.milage)
         windowState = car.windowState
         filledVolume=car.filledVolume
         fuelVolume=car.filledVolume
@@ -21,20 +23,18 @@ class SportCar: Car {
         roofState=car.roofState
     }
     
-    init!(modelName: String, year: Int, windowsCount: Int, tankVolume: Double, trunkVolume: Double, fuelConsumption: Double, milage: Double)
-    {
+    init!(modelName: String, year: Int, windowsCount: Int, tankVolume: Double,
+          trunkVolume: Double, fuelConsumption: Double, milage: Double) {
 
-        if isInvalid(trunkVolume) { return nil }
+        if trunkVolume <= 0 { return nil }
         self.trunkVolume = trunkVolume
         
-        super.init(modelName: modelName, year: year, windowsCount: windowsCount, tankVolume: tankVolume, fuelConsumption: fuelConsumption, milage: milage)
+        super.init(modelName: modelName, year: year, windowsCount: windowsCount, tankVolume: tankVolume,
+                   fuelConsumption: fuelConsumption, milage: milage)
         
-        func isInvalid(_ trunkVolume: Double) -> Bool {
-            return trunkVolume <= 0 // объем багажника
-        }
     }
 
-    public override func changeCarState(action: CarActions) {
+    override public func changeCarState(action: CarActions) {
         var result = true
         switch action {
         case .startEngine:
@@ -67,7 +67,7 @@ class SportCar: Car {
         Swift.print(toString() + "\n")
     }
     
-    override public func toString() -> String {
+    public func toString() -> String {
         var result = [
             "Модель: \(model!)",
             "Год изготовления: \(manufactured!)",
@@ -81,8 +81,10 @@ class SportCar: Car {
             "Положение крыши: \(roofState.rawValue)"
         ]
 
-        for (index, element) in windowState!.enumerated() { result.insert("Окно \(index+1): \(element.rawValue)", at: index+2) }
-
+        for (index, element) in windowState!.enumerated() {
+            result.insert("Окно \(index+1): \(element.rawValue)", at: index+2)
+            
+        }
         return result.joined(separator: "\n")
     }
     private func load(_ volume: Double) -> Bool {

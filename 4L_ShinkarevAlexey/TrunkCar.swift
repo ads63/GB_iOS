@@ -4,8 +4,7 @@
 //
 //  Created by Алексей Шинкарев on 25.07.2021.
 //
-// 1. Описать несколько структур – любой легковой автомобиль SportCar и любой грузовик TrunkCar.
-// 2. Структуры должны содержать марку авто, год выпуска, объем багажника/кузова, запущен ли двигатель, открыты ли окна, заполненный объем багажника.
+
 
 import Foundation
 
@@ -15,7 +14,9 @@ class TrunkCar : Car {
     private var trailerState = TrailerState.unhooked
 
     convenience init(_ car: TrunkCar) {
-        self.init(modelName: car.model!, year: car.manufactured!, windowsCount: car.windowState!.count, tankVolume: car.tankVolume!, bodyVolume: car.bodyVolume!, fuelConsumption: car.fuelConsumption!, milage: car.milage)
+        self.init(modelName: car.model!, year: car.manufactured!, windowsCount: car.windowState!.count,
+                  tankVolume: car.tankVolume!, bodyVolume: car.bodyVolume!, fuelConsumption: car.fuelConsumption!,
+                  milage: car.milage)
         windowState = car.windowState
         filledVolume=car.filledVolume
         fuelVolume=car.filledVolume
@@ -23,15 +24,12 @@ class TrunkCar : Car {
         trailerState=car.trailerState
     }
     
-    init!(modelName: String, year: Int, windowsCount: Int = 2, tankVolume: Double, bodyVolume: Double, fuelConsumption: Double, milage: Double)
-    {
-        if isInvalid(bodyVolume) { return nil }
+    init!(modelName: String, year: Int, windowsCount: Int = 2, tankVolume: Double,
+          bodyVolume: Double, fuelConsumption: Double, milage: Double) {
+        if bodyVolume <= 0 { return nil }
         self.bodyVolume = bodyVolume
-        super.init(modelName: modelName, year: year, windowsCount: windowsCount, tankVolume: tankVolume, fuelConsumption: fuelConsumption, milage: milage)
-
-        func isInvalid(_ bodyVolume: Double) -> Bool {
-            return bodyVolume <= 0 // объем кузова
-        }
+        super.init(modelName: modelName, year: year, windowsCount: windowsCount, tankVolume: tankVolume,
+                   fuelConsumption: fuelConsumption, milage: milage)
     }
 
     public override func changeCarState(action: CarActions) {
@@ -68,7 +66,7 @@ class TrunkCar : Car {
         Swift.print(toString()+"\n")
     }
     
-    override public func toString() -> String {
+    public func toString() -> String {
         var result = [
             "Модель: \(model!)",
             "Год изготовления: \(manufactured!)",
@@ -82,7 +80,9 @@ class TrunkCar : Car {
             "Прицеп: \(trailerState.rawValue)"
         ]
 
-        for (index, element) in windowState!.enumerated() { result.insert("Окно \(index+1): \(element.rawValue)", at: index+2) }
+        for (index, element) in windowState!.enumerated() {
+            result.insert("Окно \(index+1): \(element.rawValue)", at: index+2)
+        }
 
         return result.joined(separator: "\n")
     }

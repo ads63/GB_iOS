@@ -21,9 +21,15 @@ class Car {
         didSet { fuelVolume -= (fuelConsumption! * (milage-oldValue)) }
     }
 
-    init!(modelName: String, year: Int, windowsCount: Int, tankVolume: Double, fuelConsumption: Double, milage: Double)
-    {
-        if isInvalid(modelName, year, windowsCount, tankVolume, fuelConsumption, milage) { return nil }
+    init!(modelName: String, year: Int, windowsCount: Int, tankVolume: Double, fuelConsumption: Double, milage: Double) {
+        if modelName.isEmpty || // пустое название модели
+            year>Calendar.current.component(.year, from: Date()) || // год выпуска в будущем
+            year < 1900 || // год выпуска до 1900
+            ![2, 4].contains(windowsCount) || // количество окон не 2 и не 4
+            tankVolume <= 0 || // объем бака отрицательный
+            fuelConsumption <= 0 || // расход топлива
+            milage < 0 // пробег
+        { return nil }
 
         self.manufactured = year
         self.model = modelName
@@ -32,35 +38,10 @@ class Car {
         self.fuelConsumption = fuelConsumption
         self.milage = milage
 
-        func isInvalid(_ modelName: String, _ year: Int, _ windowsCount: Int, _ tankVolume: Double, _ fuelConsumption: Double, _ milage: Double) -> Bool {
-            return modelName.isEmpty || // пустое название модели
-                year>Calendar.current.component(.year, from: Date()) || // год выпуска в будущем
-                year < 1900 || // год выпуска до 1900
-                ![2, 4].contains(windowsCount) || // количество окон не 2 и не 4
-                tankVolume <= 0 || // объем бака отрицательный
-                fuelConsumption <= 0 || // расход топлива
-                milage < 0 // пробег
-        }
     }
 
     public func changeCarState(action: CarActions) {}
 
-    public func toString() -> String {
-        var result = [
-            "Модель: \(model!)",
-            "Год изготовления: \(manufactured!)",
-            "Двигатель: \(engineState.rawValue)",
-            "Объем бака: \(tankVolume!) л",
-            "Объем топлива: \(fuelVolume) л",
-            "Расход топлива: \(fuelConsumption!) л/км",
-            "Пробег: \(milage) км"
-        ]
-
-        for (index, element) in windowState!.enumerated() { result.insert("Окно \(index+1): \(element.rawValue)", at: index+2) }
-
-        return result.joined(separator: "\n")
-    }
-    
     func startEngine() -> Bool {
         if fuelVolume>0 { engineState = EngineState.on }
         return engineState==EngineState.on
