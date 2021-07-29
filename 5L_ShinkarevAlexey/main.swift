@@ -2,83 +2,92 @@
 //  main.swift
 //  GB_homeworks
 //
-//  Created by Алексей Шинкарев on 24.07.2021.
+//  Created by Алексей Шинкарев on 29.07.2021.
 //
 
 import Foundation
 
-// 1. Описать класс Car c общими свойствами автомобилей и пустым методом действия по аналогии с прошлым заданием.
-// 2. Описать пару его наследников trunkCar и sportСar. Подумать, какими отличительными свойствами обладают эти автомобили. Описать в каждом наследнике специфичные для него свойства.
-// 3. Взять из прошлого урока enum с действиями над автомобилем. Подумать, какие особенные действия имеет trunkCar, а какие – sportCar. Добавить эти действия в перечисление.
-// 4. В каждом подклассе переопределить метод действия с автомобилем в соответствии с его классом.
-// 5. Создать несколько объектов каждого класса. Применить к ним различные действия.
-// 6. Вывести значения свойств экземпляров в консоль.
+// 1. Создать протокол «Car» и описать свойства, общие для автомобилей,
+// а также метод действия.
+// 2. Создать расширения для протокола «Car» и реализовать в них методы
+// конкретных действий с автомобилем: открыть/закрыть окно, запустить/заглушить
+// двигатель и т.д. (по одному методу на действие, реализовывать следует только
+// те действия, реализация которых общая для всех автомобилей).
+// 3. Создать два класса, имплементирующих протокол «Car» - trunkCar и sportСar.
+// Описать в них свойства, отличающиеся для спортивного автомобиля и цистерны.
+// 4. Для каждого класса написать расширение, имплементирующее протокол
+// CustomStringConvertible.
+// 5. Создать несколько объектов каждого класса. Применить к ним различные
+// действия.
+// 6. Вывести сами объекты в консоль.
 
-let mers = SportCar(modelName: "Mersedes-Benz W128", year: 1959, tankVolume: 40,
-                    trunkVolume: 10, fuelConsumption: 0.07, milage: 0, windowsCount: 2)
-mers?.print()
+let mers = SportCar(modelName: "Mersedes-Benz W128", year: 1959,
+                    tankVolume: 40, trunkVolume: 10, fuelConsumption: 0.07,
+                    milage: 0, windowsCount: 2)
+print("\n\(mers!.description)")
 mers?.changeCarState(action: CarActions.openWindow(0))
 mers?.changeCarState(action: CarActions.openWindow(1))
 mers?.changeCarState(action: CarActions.openWindow(2))
 mers?.changeCarState(action: CarActions.fillFuel(20))
 mers?.changeCarState(action: CarActions.startEngine)
-mers?.print()
+print("\n\(mers!.description)")
 
 let mersNew = SportCar(mers!)
 
 mers?.changeCarState(action: CarActions.drive(10))
-mers?.print()
+print("\n\(mers!.description)")
 mersNew.changeCarState(action: CarActions.load(5))
 mersNew.changeCarState(action: CarActions.openWindow(0))
-mersNew.print()
+print("\n\(mersNew.description)")
 mersNew.changeCarState(action: CarActions.closeWindow(0))
-mersNew.print()
+print("\n\(mersNew.description)")
 
 let porsche = SportCar(modelName: "Porsche 911", year: 2021, tankVolume: 40,
                        trunkVolume: 60, fuelConsumption: 0.08, milage: 40000,
                        windowsCount: 4)!
-porsche.print()
+
+print("\n\(porsche.description)")
 porsche.changeCarState(action: CarActions.fillFuel(30))
 porsche.changeCarState(action: CarActions.startEngine)
 porsche.changeCarState(action: CarActions.upRoof)
-porsche.print()
+print("\n\(porsche.description)")
 porsche.changeCarState(action: CarActions.downRoof)
 porsche.changeCarState(action: CarActions.drive(1000))
 porsche.changeCarState(action: CarActions.hookTrailer)
-porsche.print()
+print("\n\(porsche.description)")
 
 let man = TrunkCar(modelName: "MAN TGM", year: 2013, tankVolume: 40,
                    bodyVolume: 51, fuelConsumption: 15, milage: 1000)!
-man.print()
+print("\n\(man.description)")
 man.changeCarState(action: CarActions.openWindow(0))
 man.changeCarState(action: CarActions.openWindow(5))
 let man2 = TrunkCar(man)
-man2.print()
+print("\n\(man2.description)")
 man2.changeCarState(action: CarActions.load(2))
-man2.print()
+print("\n\(man2.description)")
 man2.changeCarState(action: CarActions.unload(0.5))
 man2.changeCarState(action: CarActions.fillFuel(20))
-man2.print()
+print("\n\(man2.description)")
 man2.changeCarState(action: CarActions.fillFuel(30))
-man2.print()
+print("\n\(man2.description)")
 man2.changeCarState(action: CarActions.fillFuel(20))
 man2.changeCarState(action: CarActions.startEngine)
-man2.print()
+print("\n\(man2.description)")
 
 let volvo = TrunkCar(modelName: "VOLVO FH", year: 2021, tankVolume: 80,
                      bodyVolume: 60, fuelConsumption: 20, milage: 0)!
-volvo.print()
+print("\n\(volvo.description)")
 volvo.changeCarState(action: CarActions.openWindow(0))
 volvo.changeCarState(action: CarActions.load(70))
-volvo.print()
+print("\n\(volvo.description)")
 volvo.changeCarState(action: CarActions.load(60))
 volvo.changeCarState(action: CarActions.unload(70))
 volvo.changeCarState(action: CarActions.unload(10))
 volvo.changeCarState(action: CarActions.hookTrailer)
-volvo.print()
+print("\n\(volvo.description)")
 
 let volvo2 = TrunkCar(volvo)
 volvo2.changeCarState(action: CarActions.fillFuel(10))
 volvo.changeCarState(action: CarActions.unhookTrailer)
-volvo2.print()
-volvo.print()
+print("\n\(volvo2.description)")
+print("\n\(volvo.description)")

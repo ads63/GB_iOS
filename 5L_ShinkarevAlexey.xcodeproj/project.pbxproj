@@ -10,6 +10,9 @@
 		1646B44426A86D420027C2C4 /* SportCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646B44326A86D420027C2C4 /* SportCar.swift */; };
 		1646B44626A86D5C0027C2C4 /* TrunkCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646B44526A86D5C0027C2C4 /* TrunkCar.swift */; };
 		1646B44826A871220027C2C4 /* CarEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646B44726A871220027C2C4 /* CarEnums.swift */; };
+		165B46AE26B2B6D300D833F1 /* CarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165B46AD26B2B6D300D833F1 /* CarProtocol.swift */; };
+		165B46B226B2EA3900D833F1 /* CarProtocolExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165B46B126B2EA3900D833F1 /* CarProtocolExtensions.swift */; };
+		165B46B426B300A300D833F1 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165B46B326B300A300D833F1 /* ArrayExtension.swift */; };
 		168046FD26AD89D1005DDCB9 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168046FC26AD89D1005DDCB9 /* Car.swift */; };
 		1687855C269DB8440050D244 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1687855B269DB8440050D244 /* main.swift */; };
 /* End PBXBuildFile section */
@@ -30,8 +33,11 @@
 		1646B44326A86D420027C2C4 /* SportCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportCar.swift; sourceTree = "<group>"; };
 		1646B44526A86D5C0027C2C4 /* TrunkCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrunkCar.swift; sourceTree = "<group>"; };
 		1646B44726A871220027C2C4 /* CarEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarEnums.swift; sourceTree = "<group>"; };
+		165B46AD26B2B6D300D833F1 /* CarProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarProtocol.swift; sourceTree = "<group>"; };
+		165B46B126B2EA3900D833F1 /* CarProtocolExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarProtocolExtensions.swift; sourceTree = "<group>"; };
+		165B46B326B300A300D833F1 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		168046FC26AD89D1005DDCB9 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
-		16878558269DB8440050D244 /* 4L_ShinkarevAlexey */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 4L_ShinkarevAlexey; sourceTree = BUILT_PRODUCTS_DIR; };
+		16878558269DB8440050D244 /* 5L_ShinkarevAlexey */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 5L_ShinkarevAlexey; sourceTree = BUILT_PRODUCTS_DIR; };
 		1687855B269DB8440050D244 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -49,7 +55,7 @@
 		1687854F269DB8440050D244 = {
 			isa = PBXGroup;
 			children = (
-				1687855A269DB8440050D244 /* 4L_ShinkarevAlexey */,
+				1687855A269DB8440050D244 /* 5L_ShinkarevAlexey */,
 				16878559269DB8440050D244 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,29 +63,32 @@
 		16878559269DB8440050D244 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				16878558269DB8440050D244 /* 4L_ShinkarevAlexey */,
+				16878558269DB8440050D244 /* 5L_ShinkarevAlexey */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1687855A269DB8440050D244 /* 4L_ShinkarevAlexey */ = {
+		1687855A269DB8440050D244 /* 5L_ShinkarevAlexey */ = {
 			isa = PBXGroup;
 			children = (
 				1687855B269DB8440050D244 /* main.swift */,
+				165B46B326B300A300D833F1 /* ArrayExtension.swift */,
 				1646B44326A86D420027C2C4 /* SportCar.swift */,
 				1646B44526A86D5C0027C2C4 /* TrunkCar.swift */,
 				1646B44726A871220027C2C4 /* CarEnums.swift */,
 				168046FC26AD89D1005DDCB9 /* Car.swift */,
+				165B46AD26B2B6D300D833F1 /* CarProtocol.swift */,
+				165B46B126B2EA3900D833F1 /* CarProtocolExtensions.swift */,
 			);
-			path = 4L_ShinkarevAlexey;
+			path = 5L_ShinkarevAlexey;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		16878557269DB8440050D244 /* 4L_ShinkarevAlexey */ = {
+		16878557269DB8440050D244 /* 5L_ShinkarevAlexey */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1687855F269DB8440050D244 /* Build configuration list for PBXNativeTarget "4L_ShinkarevAlexey" */;
+			buildConfigurationList = 1687855F269DB8440050D244 /* Build configuration list for PBXNativeTarget "5L_ShinkarevAlexey" */;
 			buildPhases = (
 				16878554269DB8440050D244 /* Sources */,
 				16878555269DB8440050D244 /* Frameworks */,
@@ -89,9 +98,9 @@
 			);
 			dependencies = (
 			);
-			name = 4L_ShinkarevAlexey;
+			name = 5L_ShinkarevAlexey;
 			productName = 1L_ShinkarevAlexey;
-			productReference = 16878558269DB8440050D244 /* 4L_ShinkarevAlexey */;
+			productReference = 16878558269DB8440050D244 /* 5L_ShinkarevAlexey */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -108,7 +117,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 16878553269DB8440050D244 /* Build configuration list for PBXProject "4L_ShinkarevAlexey" */;
+			buildConfigurationList = 16878553269DB8440050D244 /* Build configuration list for PBXProject "5L_ShinkarevAlexey" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -121,7 +130,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				16878557269DB8440050D244 /* 4L_ShinkarevAlexey */,
+				16878557269DB8440050D244 /* 5L_ShinkarevAlexey */,
 			);
 		};
 /* End PBXProject section */
@@ -134,7 +143,10 @@
 				1646B44826A871220027C2C4 /* CarEnums.swift in Sources */,
 				1646B44426A86D420027C2C4 /* SportCar.swift in Sources */,
 				168046FD26AD89D1005DDCB9 /* Car.swift in Sources */,
+				165B46B426B300A300D833F1 /* ArrayExtension.swift in Sources */,
 				1687855C269DB8440050D244 /* main.swift in Sources */,
+				165B46B226B2EA3900D833F1 /* CarProtocolExtensions.swift in Sources */,
+				165B46AE26B2B6D300D833F1 /* CarProtocol.swift in Sources */,
 				1646B44626A86D5C0027C2C4 /* TrunkCar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,7 +290,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		16878553269DB8440050D244 /* Build configuration list for PBXProject "4L_ShinkarevAlexey" */ = {
+		16878553269DB8440050D244 /* Build configuration list for PBXProject "5L_ShinkarevAlexey" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1687855D269DB8440050D244 /* Debug */,
@@ -287,7 +299,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1687855F269DB8440050D244 /* Build configuration list for PBXNativeTarget "4L_ShinkarevAlexey" */ = {
+		1687855F269DB8440050D244 /* Build configuration list for PBXNativeTarget "5L_ShinkarevAlexey" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				16878560269DB8440050D244 /* Debug */,
