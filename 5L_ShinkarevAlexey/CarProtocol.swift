@@ -28,3 +28,4 @@ protocol CarProtocol {
     func fillFuel(_ volume: Double) -> Double
     func drive(_ distance: Double) -> Double
 }
+

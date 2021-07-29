@@ -46,3 +46,4 @@ extension CarProtocol {
             milage + min(distance, fuelVolume / fuelConsumption!) : milage
     }
 }
+

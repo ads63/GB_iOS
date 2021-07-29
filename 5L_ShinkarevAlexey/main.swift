@@ -24,6 +24,7 @@ import Foundation
 let mers = SportCar(modelName: "Mersedes-Benz W128", year: 1959,
                     tankVolume: 40, trunkVolume: 10, fuelConsumption: 0.07,
                     milage: 0, windowsCount: 2)
+
 print("\n\(mers!.description)")
 mers?.changeCarState(action: CarActions.openWindow(0))
 mers?.changeCarState(action: CarActions.openWindow(1))
@@ -58,10 +59,13 @@ print("\n\(porsche.description)")
 
 let man = TrunkCar(modelName: "MAN TGM", year: 2013, tankVolume: 40,
                    bodyVolume: 51, fuelConsumption: 15, milage: 1000)!
+
 print("\n\(man.description)")
 man.changeCarState(action: CarActions.openWindow(0))
 man.changeCarState(action: CarActions.openWindow(5))
+
 let man2 = TrunkCar(man)
+
 print("\n\(man2.description)")
 man2.changeCarState(action: CarActions.load(2))
 print("\n\(man2.description)")
@@ -76,6 +80,7 @@ print("\n\(man2.description)")
 
 let volvo = TrunkCar(modelName: "VOLVO FH", year: 2021, tankVolume: 80,
                      bodyVolume: 60, fuelConsumption: 20, milage: 0)!
+
 print("\n\(volvo.description)")
 volvo.changeCarState(action: CarActions.openWindow(0))
 volvo.changeCarState(action: CarActions.load(70))
@@ -87,6 +92,7 @@ volvo.changeCarState(action: CarActions.hookTrailer)
 print("\n\(volvo.description)")
 
 let volvo2 = TrunkCar(volvo)
+
 volvo2.changeCarState(action: CarActions.fillFuel(10))
 volvo.changeCarState(action: CarActions.unhookTrailer)
 print("\n\(volvo2.description)")

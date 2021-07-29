@@ -39,3 +39,4 @@ enum WindowState: String {
     case closed = "закрыто"
     case opened = "открыто"
 }
+
