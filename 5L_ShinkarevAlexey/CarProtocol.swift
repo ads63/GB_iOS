@@ -9,7 +9,7 @@
 
 import Foundation
 
-protocol CarProtocol {
+protocol CarProtocol: AnyObject {
     var model: String? { get }
     var manufactured: Int? { get }
     var tankVolume: Double? { get }
