@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "16878557269DB8440050D244"
-               BuildableName = "5L_ShinkarevAlexey"
-               BlueprintName = "5L_ShinkarevAlexey"
-               ReferencedContainer = "container:5L_ShinkarevAlexey.xcodeproj">
+               BuildableName = "6L_ShinkarevAlexey"
+               BlueprintName = "6L_ShinkarevAlexey"
+               ReferencedContainer = "container:6L_ShinkarevAlexey.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "16878557269DB8440050D244"
-            BuildableName = "5L_ShinkarevAlexey"
-            BlueprintName = "5L_ShinkarevAlexey"
-            ReferencedContainer = "container:5L_ShinkarevAlexey.xcodeproj">
+            BuildableName = "6L_ShinkarevAlexey"
+            BlueprintName = "6L_ShinkarevAlexey"
+            ReferencedContainer = "container:6L_ShinkarevAlexey.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "16878557269DB8440050D244"
-            BuildableName = "5L_ShinkarevAlexey"
-            BlueprintName = "5L_ShinkarevAlexey"
-            ReferencedContainer = "container:5L_ShinkarevAlexey.xcodeproj">
+            BuildableName = "6L_ShinkarevAlexey"
+            BlueprintName = "6L_ShinkarevAlexey"
+            ReferencedContainer = "container:6L_ShinkarevAlexey.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
