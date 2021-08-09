@@ -2,7 +2,7 @@
 //  main.swift
 //  7L_ShinkarevAlexey
 //
-//  Created by Алексей Шинкарев on 05.08.2021. 
+//  Created by Алексей Шинкарев on 05.08.2021.
 //
 
 let users = ["iivanov":
